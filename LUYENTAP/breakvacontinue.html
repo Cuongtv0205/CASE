@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Break và Continue</title>
+</head>
+<body>
+<script>
+    //break//
+    // for(let i = 0;i<10;i++){
+    //   console.log(i);
+    //   // sử dụng từ khóa break in ra từ 0-5//
+    //   if (i>=5){
+    //     break;
+    //   }
+    // }
+    //CONTINUE//
+    for (let i = 0; i < 10; i++) {
+
+        // sử dung Continue để in ra các số chẵn//
+        if (i % 2 !== 0) { //chia cho 2 ma có dư là số lẻ//
+            continue; // số lẻ là bỏ qua// nên in ra số chẵn//
+        }
+        console.log(i);
+    }
+
+</script>
+</body>
+</html>

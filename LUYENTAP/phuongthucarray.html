@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Các phương thức về Array </title>
+</head>
+<body>
+<script>
+  // for Each():duyệt qua từng phần tử của vòng lặp
+  var courses = [
+    {
+      id: 1,
+      name: 'Javascript',
+      coin: 250
+    },
+    {
+      id: 1,
+      name: 'HTML , CSS',
+      coin: 0
+    },
+    {
+      id: 1,
+      name: 'Ruby',
+      coin: 0
+    },
+    {
+      id: 1,
+      name: 'PHP',
+      coin: 400
+    },
+    {
+      id: 1,
+      name: 'ReactJS',
+      coin: 50
+    }
+  ];
+
+  // courses.forEach(function (course,index){ // course:từng phần tử của mảng//
+  //   console.log(index,course); //index: vị trí của mảng//
+  // })
+
+  // //every() : kiểm tra tất cả các phẩn tử phải thỏa mãn một điều kiện nào đó//
+  // var isFree = courses.every(function (course,index){
+  //   return course.coin === 0; // trả về kiểu boolane:true hoặc false chỉ cần 1 dk sai là false.
+  // });
+  // console.log(isFree);
+
+  // some(): chỉ cần 1 phần tử trong mảng thỏa mãn dk là đúng là ngung lai//
+  // var isFree = courses.some(function (course,index){
+  //   return course.coin === 0;
+  // });
+  // console.log(isFree);
+  //find(): tìm kiếm phan tu trong mang,thỏa mãn dừng lại luôn//
+  // var course = courses.find(function (course,index){
+  //     return course.name === 'Ruby'; //phần tử nào duyệt qua đầu tiên là dừng lại luôn//
+  // });
+  // console.log(course);
+
+  // filter(): trả về tất cả phần tử thỏa mãn trong mảng, danh sách//
+
+  //map(): muốn thay đổi 1 element của một array
+  // yêu cầu thêm khóa học vào trường name,và thêm trường coninText//
+
+//   function courseHandler(course,index){
+// return {
+//     id: course.id,
+//     name: `Khoa hoc: ${course.name}`,
+//     coin: course.coin,
+//     coinText: `Gia: ${course.coin}`,
+//     index: index,
+// };
+//   }
+//   var newCourses = courses.map(courseHandler);
+//   console.log(newCourses);
+
+  //reduce(): thực thi hàm rút gọn cho phần tử của mảng//
+  // trả về một giá trị duy nhất//
+  // mảng trống thì không thực thi,không thay đổi mảng ban đầu//
+  // var i = 0;
+// function coinHandler(accumulator,currentValue,currentIndex,originArray){ //crValue:giá trị hiện tại của phần tử.
+//                  // CRIndex:chỉ mục của CRValue
+//                // oriArrry chính là courses ,cùng chỉ về một ô nhớ//
+// i++;
+// // console.table({
+// //     'lượt chạy :': i,
+// //     'Biến tích trữ:': accumulator,
+// // });
+// // console.log(currentValue);
+  var totalCoin = courses.reduce(function (accumulator,currentValue,currentIndex,originArray){
+      return accumulator + currentValue.coin;
+  },0);// 0:biến giá trị khởi tạo//
+console.log(totalCoin);
+  // for(var course of courses){
+  //     totalCoin +=course.coin;
+  // }
+  // console.log(totalCoin);
+
+
+
+
+</script>
+</body>
+</html>

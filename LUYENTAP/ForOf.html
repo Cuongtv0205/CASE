@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Học hàm for Of</title>
+</head>
+<body>
+<script>
+  // var languages = [
+  //         'Javascript',
+  //         'PHP',
+  //         'Ruby'
+  // ];
+  // for (var value of languages){
+  //   console.log(value); // lấy ra các phần tử trong mảng JV,PHP,Ruby//
+  // }
+  // var languages = 'Javascript';
+  // for (var value of languages){
+  //   console.log(value); // lấy ra: J,a,v,a,s,r,c,i,p,t//
+  // }
+  //TH Là một Object//
+   var myInfo = {
+     name: 'Long Vu',
+     age: 18
+   };
+   // console.log(Object.keys(myInfo)); // trả về một mảng các key
+  for (var value of Object.keys(myInfo)){
+    // console.log(value);// lấy ra : name và age
+    console.log(myInfo[value]); // lấy ra: Long Vu và 18
+  }
+</script>
+</body>
+</html>
