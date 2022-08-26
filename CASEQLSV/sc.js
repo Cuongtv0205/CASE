@@ -1,7 +1,6 @@
 function emailisValidate(email) {
     return /^[^ ]+@[^ ]+\.[a-z]{2,3}$/.test(email);
 }
-
 function save() {
     let name = document.getElementById('name').value;
     let msv = document.getElementById('msv').value;
@@ -15,7 +14,7 @@ function save() {
     } else if (document.getElementById('famale').checked) {
         gender = document.getElementById('famale').value
     }
-    if (!isNaN(name)) {
+    if (!isNaN(name)) { // trả về true hoặc False
 
         document.getElementById('name-error').innerHTML = 'Vui lòng nhập họ tên!';
     } else if (name.trim().length <= 2) {
@@ -30,7 +29,9 @@ function save() {
     }
     if (msv === '') {
         document.getElementById('msv-error').innerHTML = 'Vui lòng nhập mã sinh viên!';
+
     } else if (msv.trim().length > 6) {
+
         document.getElementById('msv-error').innerHTML = 'Bạn nhập mã sinh viên quá ký tự!';
     } else {
         document.getElementById('msv-error').innerHTML = '';
@@ -119,7 +120,7 @@ function renderListStudent() {
     <td>Địa Chỉ</td>
     <td>Hành Động</td>
   </tr>`;
-    students.forEach((student, index) => {
+    students.forEach((student, index) => { // gọi hàm cho mỗi phần tử trong mảng//
         // id của mảng bd xóa bắt đầu bằng 0//
         let studentId = index; // index là key của mảng students// được truyền vào sự kiện onclick của delete//
         let genderLabel = parseInt(student.gender) === 1 ? 'Nam' : 'Nữ';
@@ -127,7 +128,7 @@ function renderListStudent() {
         index++; // mỗi lẫn chạy xong + lên 1 đơn vị//
         tableContent += `<tr>
      <td>${index}</td>
-    <td>${student.name}</td>
+    <td>${student.name}</td>  
     <td>${student.msv}</td>
      <td>${student.date}</td>
      <td>${student.email}</td>
@@ -141,7 +142,6 @@ function renderListStudent() {
     })
     document.getElementById('grid-students').innerHTML = tableContent;
 }
-
 function deleteStudent(id) {
     // mỗi lần xóa sẽ đọc thông tin sinh viên//
     //trong mảng key của students không trùng nhau nên dựa vào đó để xóa//(id)
